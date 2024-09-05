@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Wierd Dessert Shop</title>
+    <title>The Weird Dessert Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +15,40 @@
       rel="stylesheet"
       type="text/css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <style>
+      body {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden; /* 요소가 화면 밖으로 나가지 않게 하기 위해 */
+      }
+
+      .container {
+        position: relative;
+      }
+
+      li {
+        position: absolute;
+        list-style: none; /* 불릿을 제거 */
+        font-size: 17px;
+      }
+
+      /* Y축 고정 값 */
+      li:nth-child(1) {
+        top: 100px;
+      }
+
+      li:nth-child(2) {
+        top: 150px;
+      }
+
+      li:nth-child(3) {
+        top: 200px;
+      }
+
+      li:nth-child(4) {
+        top: 250px;
+      }
+    </style>
   </head>
   <body>
     <div class="viewport">
@@ -34,7 +69,7 @@
                 color: rgb(255, 7, 238);
                 font-size: 27px;
               ">
-              The Wierd Dessert Shop
+              The Weird Dessert Shop
             </p>
           </div>
         </section>
@@ -44,48 +79,25 @@
           <div class="container">
             <li>
               <a href="./src/Gulliver/index.html">
-                <p
-                  style="
-                    text-align: right;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
-                  걸리버 여행기
-                </p>
+                <p style="color: rgb(0, 255, 179)">걸리버 여행기</p>
               </a>
             </li>
 
             <li>
               <a href="./src/Red/index.html">
-                <p
-                  style="
-                    text-align: center;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
-                  빨간머리 앤
-                </p>
+                <p style="color: rgb(0, 255, 179)">빨간머리 앤</p>
               </a>
             </li>
 
             <li>
               <a href="./src/Frankenstein/index.html">
-                <p style="color: rgb(0, 255, 179); font-size: 17px">
-                  프랑켄슈타인
-                </p>
+                <p style="color: rgb(0, 255, 179)">프랑켄슈타인</p>
               </a>
             </li>
 
             <li>
               <a href="./src/when buckwheat flowers bloom/index.html">
-                <p
-                  style="
-                    text-align: right;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
-                  메밀꽃 필 무렵
-                </p>
+                <p style="color: rgb(0, 255, 179)">메밀꽃 필 무렵</p>
               </a>
             </li>
           </div>
@@ -97,5 +109,20 @@
         </section>
       </footer>
     </div>
+
+    <script>
+      // 문서가 로드된 후 실행
+      window.onload = function () {
+        const listItems = document.querySelectorAll('li');
+        const viewportWidth = window.innerWidth;
+
+        listItems.forEach((item) => {
+          // 랜덤한 X 위치를 설정
+          const randomX = Math.floor(Math.random() * viewportWidth); // X축 랜덤 위치
+
+          item.style.left = randomX + 'px';
+        });
+      };
+    </script>
   </body>
 </html>
