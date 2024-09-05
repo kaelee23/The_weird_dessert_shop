@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +18,7 @@
       body {
         position: relative;
         min-height: 100vh;
-        overflow: hidden; /* 요소가 화면 밖으로 나가지 않게 하기 위해 */
+        overflow: hidden;
       }
 
       .container {
@@ -28,7 +27,7 @@
 
       li {
         position: absolute;
-        list-style: none; /* 불릿을 제거 */
+        list-style: none;
         font-size: 17px;
       }
 
@@ -111,14 +110,15 @@
     </div>
 
     <script>
-      // 문서가 로드된 후 실행
       window.onload = function () {
         const listItems = document.querySelectorAll('li');
         const viewportWidth = window.innerWidth;
 
         listItems.forEach((item) => {
-          // 랜덤한 X 위치를 설정
-          const randomX = Math.floor(Math.random() * viewportWidth); // X축 랜덤 위치
+          const itemWidth = item.offsetWidth;
+          // 랜덤한 X 위치 설정 (화면 밖으로 나가지 않게)
+          const maxX = viewportWidth - itemWidth;
+          const randomX = Math.floor(Math.random() * maxX);
 
           item.style.left = randomX + 'px';
         });
