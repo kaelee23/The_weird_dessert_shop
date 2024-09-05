@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+새로고침 해보세요
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Wierd Dessert Shop</title>
+    <title>The Weird Dessert Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +15,11 @@
       rel="stylesheet"
       type="text/css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <style>
+      .random-position {
+        position: relative;
+      }
+    </style>
   </head>
   <body>
     <div class="viewport">
@@ -34,7 +40,7 @@
                 color: rgb(255, 7, 238);
                 font-size: 27px;
               ">
-              The Wierd Dessert Shop
+              The Weird Dessert Shop
             </p>
           </div>
         </section>
@@ -42,33 +48,23 @@
       <main>
         <section>
           <div class="container">
-            <li>
+            <li class="random-position">
               <a href="./src/Gulliver/index.html">
-                <p
-                  style="
-                    text-align: right;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
+                <p style="color: rgb(0, 255, 179); font-size: 17px">
                   걸리버 여행기
                 </p>
               </a>
             </li>
 
-            <li>
+            <li class="random-position">
               <a href="./src/Red/index.html">
-                <p
-                  style="
-                    text-align: center;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
+                <p style="color: rgb(0, 255, 179); font-size: 17px">
                   빨간머리 앤
                 </p>
               </a>
             </li>
 
-            <li>
+            <li class="random-position">
               <a href="./src/Frankenstein/index.html">
                 <p style="color: rgb(0, 255, 179); font-size: 17px">
                   프랑켄슈타인
@@ -76,14 +72,9 @@
               </a>
             </li>
 
-            <li>
+            <li class="random-position">
               <a href="./src/when buckwheat flowers bloom/index.html">
-                <p
-                  style="
-                    text-align: right;
-                    color: rgb(0, 255, 179);
-                    font-size: 17px;
-                  ">
+                <p style="color: rgb(0, 255, 179); font-size: 17px">
                   메밀꽃 필 무렵
                 </p>
               </a>
@@ -97,5 +88,19 @@
         </section>
       </footer>
     </div>
+
+    <script>
+      function getRandomXPosition() {
+        // Generates a random x-position (between 0% and 80%)
+        return Math.random() * 80 + '%';
+      }
+
+      window.onload = function () {
+        const randomElements = document.querySelectorAll('.random-position');
+        randomElements.forEach((element) => {
+          element.style.left = getRandomXPosition();
+        });
+      };
+    </script>
   </body>
 </html>
