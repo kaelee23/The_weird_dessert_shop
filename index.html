@@ -32,7 +32,7 @@
       /* 새로운 상단 네모 스타일 */
       .top-bar {
         width: 100vw; /* 화면 가로만큼 */
-        height: 30px; /* 높이 10px */
+        height: 30px; /* 높이 30px */
         background-color: black; /* 검정색 네모 */
         position: absolute;
         top: 0;
@@ -46,7 +46,7 @@
         white-space: nowrap;
         font-size: 12px;
         color: rgb(255, 255, 255);
-        animation: scroll-left 12s linear infinite;
+        animation: scroll-left 14s linear infinite; /* 전체 시간 조정 */
       }
 
       @keyframes scroll-left {
@@ -63,7 +63,11 @@
     <div class="viewport">
       <!-- 새로운 상단 네모 추가 및 흘러가는 텍스트 추가 -->
       <div class="top-bar">
-        <p class="scrolling-text">이상한 디저트 가게에 오신 것을 환영합니다</p>
+        <p class="scrolling-text">
+          이상한 디저트 가게에 오신 것을
+          환영합니다.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;원하시는 디저트 제목을 골라주세요.
+        </p>
       </div>
 
       <header>
