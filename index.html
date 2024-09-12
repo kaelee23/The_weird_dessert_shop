@@ -28,12 +28,26 @@
         list-style: none;
         padding: 0;
       }
+
+      /* 새로운 상단 네모 스타일 추가 */
+      .top-bar {
+        width: 100vw; /* 화면 가로만큼 */
+        height: 30px; /* 높이 10px */
+        background-color: black; /* 검정색 네모 */
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     </style>
   </head>
   <body>
     <div class="viewport">
+      <!-- 새로운 상단 네모 추가 -->
+      <div class="top-bar"></div>
+
       <header>
         <section>
+          <br />
           <div class="container">
             <p style="text-align: center; color: rgb(0, 0, 0); font-size: 45px">
               이상한 디저트 가게
@@ -41,7 +55,7 @@
             <p
               style="
                 text-align: center;
-                color: rgb(252, 255, 51);
+                color: rgb(255, 255, 255);
                 font-size: 27px;
               ">
               The Weird Dessert Shop
