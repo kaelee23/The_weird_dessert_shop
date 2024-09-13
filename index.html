@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Weird Dessert Shop</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +21,7 @@
 
     <style>
       body {
-        background-color: #ff6eb4; /* 배경색을 마젠타로 설정 */
+        background-color: #000000; /* 배경색을 마젠타로 설정 */
         overflow: hidden; /* 스크롤바 숨기기 */
       }
 
@@ -38,7 +39,7 @@
       .top-bar {
         width: 100vw; /* 화면 가로만큼 */
         height: 30px; /* 높이 30px */
-        background-color: black; /* 검정색 네모 */
+        background-color: rgb(255, 108, 177); /* 검정색 네모 */
         position: absolute;
         top: 0;
         left: 0;
@@ -50,7 +51,7 @@
         position: relative;
         white-space: nowrap;
         font-size: 12px;
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         animation: scroll-left 14s linear infinite; /* 전체 시간 조정 */
       }
 
@@ -100,7 +101,7 @@
       <!-- 새로운 상단 네모 추가 및 흘러가는 텍스트 추가 -->
       <div class="top-bar">
         <p class="scrolling-text">
-          이상한 디저트 가게에 오신 것을
+          이상한 디저트 가게에 오신 여러분을
           환영합니다.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;원하시는 디저트 제목을 골라주세요.
         </p>
@@ -109,7 +110,12 @@
       <header>
         <section>
           <div class="container">
-            <p style="text-align: center; color: rgb(0, 0, 0); font-size: 45px">
+            <p
+              style="
+                text-align: center;
+                color: rgb(255, 255, 255);
+                font-size: 40px;
+              ">
               이상한 디저트 가게
             </p>
             <p
