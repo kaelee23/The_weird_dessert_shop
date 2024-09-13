@@ -63,12 +63,22 @@
         }
       }
 
-      /* 애니메이션을 위한 원 스타일 */
-      .falling-circle {
+      /* 애니메이션을 위한 별 스타일 */
+      .falling-star {
         position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        background-color: yellow; /* 별 색상 */
         pointer-events: none; /* 클릭 방지 */
         animation: fall 3s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
       }
@@ -172,30 +182,38 @@
 
     <script>
       function getRandomColor() {
-        // Generates a random color in the green-yellow range
-        const r = Math.floor(Math.random() * 255); // Red component
-        const g = Math.floor(Math.random() * 0); // Green component
-        const b = Math.floor(Math.random() * 0); // Blue component
-
-        // Ensure the color is in the green-yellow range
-        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`; // Ensure a minimum blue value for better green-yellow effect
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 0);
+        const b = Math.floor(Math.random() * 0);
+        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
       }
-      function createFallingCircle(x, y) {
-        const circle = document.createElement('div');
-        circle.classList.add('falling-circle');
-        circle.style.backgroundColor = getRandomColor();
-        circle.style.left = `${x - 5}px`; // 10px 원의 중앙을 맞추기 위해 -5px
-        circle.style.top = `${y - 5}px`; // 10px 원의 중앙을 맞추기 위해 -5px
-        document.body.appendChild(circle);
 
-        // Remove the circle after the animation ends
-        circle.addEventListener('animationend', () => {
-          circle.remove();
+      function getRandomSize() {
+        return Math.floor(Math.random() * 13) + 3; // 3px ~ 15px 사이의 랜덤 크기
+      }
+
+      function createFallingStar(x, y, color = getRandomColor()) {
+        const star = document.createElement('div');
+        const size = getRandomSize();
+        star.classList.add('falling-star');
+        star.style.backgroundColor = color;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${x - size / 2}px`;
+        star.style.top = `${y - size / 2}px`;
+        document.body.appendChild(star);
+
+        star.addEventListener('animationend', () => {
+          star.remove();
         });
       }
 
       window.addEventListener('mousemove', (event) => {
-        createFallingCircle(event.pageX, event.pageY);
+        createFallingStar(event.pageX, event.pageY);
+      });
+
+      window.addEventListener('click', (event) => {
+        createFallingStar(event.pageX, event.pageY, 'white');
       });
     </script>
   </body>
