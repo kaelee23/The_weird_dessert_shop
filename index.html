@@ -39,7 +39,7 @@
       .top-bar {
         width: 100vw; /* 화면 가로만큼 */
         height: 30px; /* 높이 30px */
-        background-color: rgb(255, 108, 177); /* 검정색 네모 */
+        background-color: rgb(154, 216, 255); /* 검정색 네모 */
         position: absolute;
         top: 0;
         left: 0;
@@ -109,70 +109,26 @@
 
       <header>
         <section>
-          <div class="container">
-            <p
-              style="
-                text-align: center;
-                color: rgb(255, 255, 255);
-                font-size: 40px;
-              ">
-              이상한 디저트 가게
-            </p>
-            <p
-              style="
-                text-align: center;
-                color: rgb(252, 255, 51);
-                font-size: 27px;
-              ">
-              The Weird Dessert Shop
-            </p>
-          </div>
+          <div class="container"></div>
         </section>
       </header>
       <main>
         <section>
           <div class="container">
+            <center><img src="./quf.png" style="width: 100%" /></center>
+            <br />
+            <br />
             <ul>
               <li class="random-position">
-                <a href="./src/Gulliver/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">
-                    걸리버 여행기
+                <a href="./src/Start/index.html">
+                  <p
+                    style="
+                      text-align: center;
+                      color: rgb(0, 255, 179);
+                      font-size: 30px;
+                    ">
+                    입장하기
                   </p>
-                </a>
-              </li>
-
-              <li class="random-position">
-                <a href="./src/Red/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">
-                    빨간머리 앤
-                  </p>
-                </a>
-              </li>
-
-              <li class="random-position">
-                <a href="./src/Frankenstein/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">
-                    프랑켄슈타인
-                  </p>
-                </a>
-              </li>
-
-              <li class="random-position">
-                <a href="./src/when buckwheat flowers bloom/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">
-                    메밀꽃 필 무렵
-                  </p>
-                </a>
-              </li>
-
-              <li class="random-position">
-                <a href="./src/Momo/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">모모</p>
-                </a>
-              </li>
-              <li class="random-position">
-                <a href="./src/Rain/index.html">
-                  <p style="color: rgb(0, 255, 179); font-size: 17px">소나기</p>
                 </a>
               </li>
             </ul>
@@ -189,13 +145,13 @@
     <script>
       function getRandomColor() {
         const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 0);
+        const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 0);
         return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
       }
 
       function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 3; // 3px ~ 15px 사이의 랜덤 크기
+        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
       }
 
       function createFallingStar(x, y, color = getRandomColor()) {
