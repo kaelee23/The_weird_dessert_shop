@@ -4,44 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>메뉴 소개</title>
+    <title>menu</title>
     <link
       href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
       rel="stylesheet"
       type="text/css" />
     <link rel="stylesheet" href="../../style/style.css" />
 
-    <!-- 별 떨어지는 모션을 위한 CSS 추가 -->
     <style>
-      /* 애니메이션을 위한 별 스타일 */
-      .falling-star {
-        position: absolute;
-        clip-path: polygon(
-          50% 0%,
-          61% 35%,
-          98% 35%,
-          68% 57%,
-          79% 91%,
-          50% 70%,
-          21% 91%,
-          32% 57%,
-          2% 35%,
-          39% 35%
-        );
-        background-color: yellow; /* 별 색상 */
-        pointer-events: none; /* 클릭 방지 */
-        animation: fall 3s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+      /* 가로 100px 세로 1000px 사각형 */
+      .menu-box {
+        width: 400px;
+        height: 750px; /* 스크롤 가능하게 보이도록 영역 제한 */
+        background-color: rgb(126, 126, 126);
+        margin: 0 auto; /* 가운데 정렬 */
+        overflow-y: scroll; /* 세로 스크롤 생성 */
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
       }
 
-      @keyframes fall {
-        from {
-          transform: translateY(0);
-        }
-        to {
-          transform: translateY(
-            calc(100vh - 10px)
-          ); /* 화면 하단까지 떨어지게 */
-        }
+      .inner-content {
+        height: 120%; /* 안쪽 내용 높이를 박스에 맞게 조정 */
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */ /* 세로 중앙 정렬 속성 제거 */
       }
 
       /* 목록 점 제거 */
@@ -57,182 +46,96 @@
         <section>
           <div class="container">
             <a href="https://kaelee23.github.io/The_weird_dessert_shop/">
-              <p
-                style="
-                  color: rgb(0, 255, 179);
-                  font-size: 15px;
-                  margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                ">
+              <p style="color: rgb(0, 255, 179); font-size: 15px">
                 << 처음으로 돌아가기
               </p>
             </a>
-            <br />
-            <p
-              style="
-                color: white;
-                font-size: 30px;
-                margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                font-weight: bold;
-              ">
-              메뉴 소개
-            </p>
           </div>
         </section>
       </header>
       <main></main>
       <section>
         <div class="container">
-          <a href="./Gulliver/index.html">
-            <img
-              src="2021-12-29_event(5).png"
-              style="
-                position: absolute;
-                top: 70%;
-                left: calc(50% - 170px);
-                width: 100px;
-                transform: translate(-50%, -50%);
-              " />
-          </a>
-
-          <a href="./Frankenstein/index.html">
-            <img
-              src="프랑켄슈.png"
-              style="
-                position: absolute;
-                top: 30%;
-                left: calc(50% + 100px);
-                width: 100px;
-                transform: translate(-50%, -50%);
-              " />
-          </a>
-          <a href="./Red/index.html">
-            <img
-              src="앤.png"
-              style="
-                position: absolute;
-                top: 50%;
-                left: calc(50% + 290px);
-                width: 100px;
-                transform: translate(-50%, -50%);
-              " />
-          </a>
-          <a href="./when buckwheat flowers bloom/index.html">
-            <img
-              src="메밀.png"
-              style="
-                position: absolute;
-                top: 64%;
-                left: calc(50% + 140px);
-                width: 100px;
-                transform: translate(-50%, -50%);
-              " />
-          </a>
-
-          <ul>
-            <li>
-              <a href="./Gulliver/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    width: 115px;
-                    color: rgb(246, 255, 0);
-                    font-size: 15px;
-                    margin-top: -80px;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                    text-align: center; /* 텍스트 가운데 정렬 */
-                  ">
-                  걸리버 여행기
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="./Frankenstein/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    width: 110px;
-                    color: rgb(246, 255, 0);
-                    font-size: 15px;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                    text-align: center;
-                  ">
-                  프랑켄슈타인
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="./Red/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    width: 90px;
-                    color: rgb(246, 255, 0);
-                    text-align: center;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                    font-size: 15px;
-                  ">
-                  빨간머리앤
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="./when buckwheat flowers bloom/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    width: 120px;
-                    color: rgb(246, 255, 0);
-                    font-size: 15px;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                    text-align: center;
-                  ">
-                  메밀꽃 필 무렵
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="./Momo/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    text-align: center;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                    width: 50px;
-                    color: rgb(246, 255, 0);
-                    font-size: 15px;
-                  ">
-                  모모
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="./Rain/index.html">
-                <p
-                  style="
-                    border: 1px solid rgb(255, 0, 132);
-                    border-radius: 17px;
-                    padding: 1px;
-                    width: 60px;
-                    color: rgb(246, 255, 0);
-                    font-size: 15px;
-                    text-align: center;
-                    margin-left: -90px; /* 왼쪽으로 50px 이동 */
-                  ">
-                  소나기
-                </p>
-              </a>
-            </li>
-          </ul>
+          <!-- 네모 추가 -->
+          <div class="menu-box">
+            <div class="inner-content">
+              <ul>
+                <li>
+                  <a href="./Gulliver/index.html">
+                    <p
+                      style="
+                        width: 115px;
+                        color: rgb(255, 255, 255);
+                        font-size: 16px;
+                        text-align: center;
+                      ">
+                      걸리버 여행기
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./Frankenstein/index.html">
+                    <p
+                      style="
+                        width: 115px;
+                        color: rgb(255, 255, 255);
+                        font-size: 16px;
+                        text-align: center;
+                      ">
+                      프랑켄슈타인
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./Red/index.html">
+                    <p
+                      style="
+                        width: 115px;
+                        color: rgb(255, 255, 255);
+                        font-size: 16px;
+                        text-align: center;
+                      ">
+                      빨간머리 앤
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./when buckwheat flowers bloom/index.html">
+                    <p
+                      style="
+                        width: 115px;
+                        color: rgb(255, 255, 255);
+                        font-size: 16px;
+                        text-align: center;
+                        white-space: nowrap;
+                      ">
+                      메밀꽃 필 무렵
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./Momo/index.html">
+                    <p
+                      style="
+                        width: 115px;
+                        color: rgb(255, 255, 255);
+                        font-size: 16px;
+                        text-align: center;
+                        white-space: nowrap;
+                      ">
+                      모모
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./Rain/index.html">
+                    <p style=" width: 115px; color: rgb(255, 255, 255);
+                    font-size: 16px; text-align: center; white-space: nowrap;
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
       <footer>
@@ -241,43 +144,5 @@
         </section>
       </footer>
     </div>
-
-    <!-- 별 떨어지는 모션을 위한 JS 코드 -->
-    <script>
-      function getRandomColor() {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 150);
-        const b = Math.floor(Math.random() * 0);
-        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
-      }
-
-      function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
-      }
-
-      function createFallingStar(x, y, color = getRandomColor()) {
-        const star = document.createElement('div');
-        const size = getRandomSize();
-        star.classList.add('falling-star');
-        star.style.backgroundColor = color;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${x - size / 2}px`;
-        star.style.top = `${y - size / 2}px`;
-        document.body.appendChild(star);
-
-        star.addEventListener('animationend', () => {
-          star.remove();
-        });
-      }
-
-      window.addEventListener('mousemove', (event) => {
-        createFallingStar(event.pageX, event.pageY);
-      });
-
-      window.addEventListener('click', (event) => {
-        createFallingStar(event.pageX, event.pageY, 'white');
-      });
-    </script>
   </body>
 </html>
