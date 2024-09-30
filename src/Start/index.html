@@ -12,6 +12,36 @@
     <link rel="stylesheet" href="../../style/style.css" />
 
     <style>
+      /* 애니메이션을 위한 별 스타일 */
+      .falling-star {
+        position: absolute;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        background-color: yellow; /* 별 색상 */
+        pointer-events: none; /* 클릭 방지 */
+        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+      }
+
+      @keyframes fall {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(
+            calc(100vh - 10px)
+          ); /* 화면 하단까지 떨어지게 */
+        }
+      }
       /* 가로 100px 세로 1000px 사각형 */
       .container {
         display: flex;
@@ -259,5 +289,42 @@
         </section>
       </footer>
     </div>
+    <script>
+      // RGB 색상을 반환하는 함수 수정
+      function getRandomColor() {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 150);
+        const b = Math.floor(Math.random() * 0);
+        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
+      }
+
+      function getRandomSize() {
+        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
+      }
+
+      function createFallingStar(x, y, color = getRandomColor()) {
+        const star = document.createElement('div');
+        const size = getRandomSize();
+        star.classList.add('falling-star');
+        star.style.backgroundColor = color;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${x - size / 2}px`;
+        star.style.top = `${y - size / 2}px`;
+        document.body.appendChild(star);
+
+        star.addEventListener('animationend', () => {
+          star.remove();
+        });
+      }
+
+      window.addEventListener('mousemove', (event) => {
+        createFallingStar(event.pageX, event.pageY);
+      });
+
+      window.addEventListener('click', (event) => {
+        createFallingStar(event.pageX, event.pageY, 'white');
+      });
+    </script>
   </body>
 </html>
