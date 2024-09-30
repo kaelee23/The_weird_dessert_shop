@@ -16,7 +16,7 @@
       .menu-box {
         width: 400px;
         height: 750px; /* 스크롤 가능하게 보이도록 영역 제한 */
-        background-color: rgb(126, 126, 126);
+        background-color: rgba(126, 126, 126, 0.8); /* 반투명하게 설정 */
         margin: 0 auto; /* 가운데 정렬 */
         overflow-y: scroll; /* 세로 스크롤 생성 */
         color: white;
@@ -24,13 +24,16 @@
         font-weight: bold;
         text-align: center;
         padding: 10px;
+        position: relative;
+        background-image: url('가게 copy.png'); /* 배경 이미지 추가 */
+        background-size: cover; /* 이미지가 박스 크기에 맞춰짐 */
+        background-position: center; /* 이미지가 중앙에 배치됨 */
       }
 
       .inner-content {
         height: 120%; /* 안쪽 내용 높이를 박스에 맞게 조정 */
         display: flex;
         justify-content: center;
-        /* align-items: center; */ /* 세로 중앙 정렬 속성 제거 */
       }
 
       /* 목록 점 제거 */
@@ -61,7 +64,7 @@
             <div class="inner-content">
               <ul>
                 <li>
-                  <a href="./Gulliver/index.html">
+                  <a hrefliver/index.html">
                     <p
                       style="
                         width: 115px;
