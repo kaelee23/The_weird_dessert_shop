@@ -41,6 +41,48 @@
         height: 100%; /* 전체 높이 */
         background-color: white; /* 하얀색 */
       }
+      /* 중앙 텍스트 스타일 추가 */
+      .center-text1 {
+        position: absolute;
+        left: 3%; /* 첫 번째 세로줄과 일치 */
+        top: 8%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      /* 이미지 스타일 추가 */
+      .hidden-image1 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 50%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
+      .center-text2 {
+        position: absolute;
+        left: 3%; /* 첫 번째 세로줄과 일치 */
+        top: 17%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image2 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 50%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
       /* 애니메이션을 위한 별 스타일 */
       .falling-star {
         position: absolute;
@@ -97,7 +139,18 @@
             <div class="center-rectangle">
               <div class="vertical-line1"></div>
               <div class="vertical-line2"></div>
-              <!-- 추가된 세로줄 -->
+
+              <div class="center-text1">1</div>
+              <!-- 중앙에 추가된 글자 -->
+              <img
+                src="./rjfflqj qorud.jpg"
+                class="hidden-image1"
+                id="hidden-image1" />
+
+              <div class="center-text2">2</div>
+              <!-- 중앙에 추가된 글자 -->
+              <img src="./가게.png" class="hidden-image2" id="hidden-image2" />
+              <!-- 이미지 추가 -->
             </div>
             <!-- 레시피 아래로 이동 -->
           </div>
@@ -148,6 +201,24 @@
 
       window.addEventListener('click', (event) => {
         createFallingStar(event.pageX, event.pageY, 'white');
+      });
+
+      // "1" 클릭 시 이미지 보이기
+      document.querySelector('.center-text1').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image1');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "2" 클릭 시 이미지 보이기
+      document.querySelector('.center-text2').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image2');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
       });
     </script>
   </body>
