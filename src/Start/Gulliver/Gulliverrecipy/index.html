@@ -24,6 +24,23 @@
         border: 1px solid white; /* 하얀색 테두리 추가 */
         background-color: transparent; /* 배경색 제거 */
       }
+      /* 세로줄 스타일 추가 */
+      .vertical-line1 {
+        position: absolute;
+        left: 10%; /* 왼쪽에서 10% 위치 */
+        top: 0; /* 상단에 위치 */
+        width: 1px; /* 1px 너비 */
+        height: 100%; /* 전체 높이 */
+        background-color: white; /* 하얀색 */
+      }
+      .vertical-line2 {
+        position: absolute;
+        left: 70%; /* 왼쪽에서 10% 위치 */
+        top: 0; /* 상단에 위치 */
+        width: 1px; /* 1px 너비 */
+        height: 100%; /* 전체 높이 */
+        background-color: white; /* 하얀색 */
+      }
       /* 애니메이션을 위한 별 스타일 */
       .falling-star {
         position: absolute;
@@ -77,7 +94,11 @@
             <p style="text-align: center; color: white; font-size: 25px">
               레시피
             </p>
-            <div class="center-rectangle"></div>
+            <div class="center-rectangle">
+              <div class="vertical-line1"></div>
+              <div class="vertical-line2"></div>
+              <!-- 추가된 세로줄 -->
+            </div>
             <!-- 레시피 아래로 이동 -->
           </div>
         </section>
