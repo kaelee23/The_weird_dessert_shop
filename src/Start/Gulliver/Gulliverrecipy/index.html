@@ -13,39 +13,22 @@
       .center-rectangle {
         position: relative; /* 절대 위치 설정 */
         top: calc(
-          25px + 50px
+          25px
         ); /* "레시피" 텍스트 아래에 위치 (25px은 레시피의 높이, 50px은 상단 여백) */
         left: 50%; /* 화면의 50% 지점에 위치 */
         transform: translate(-50%, 0); /* x축으로 중앙 정렬 */
         width: 80vw; /* 뷰포트 너비의 80% */
         height: 45vw; /* 뷰포트 너비의 45% (16:9 비율 유지) */
-        max-width: 1920px;
-        max-height: 1080px;
-        border: 0.5px solid white; /* 하얀색 테두리 추가 */
-        background-color: transparent; /* 배경색 제거 */
+        max-width: 1921px;
+        border: 1px solid white; /* 하얀색 테두리 추가 */
       }
       /* 세로줄 스타일 추가 */
-      .vertical-line1 {
-        position: absolute;
-        left: 10%; /* 왼쪽에서 10% 위치 */
-        top: 0; /* 상단에 위치 */
-        width: 0.5px; /* 1px 너비 */
-        height: 100%; /* 전체 높이 */
-        background-color: white; /* 하얀색 */
-      }
-      .vertical-line2 {
-        position: absolute;
-        left: 70%; /* 왼쪽에서 10% 위치 */
-        top: 0; /* 상단에 위치 */
-        width: 0.5px; /* 1px 너비 */
-        height: 100%; /* 전체 높이 */
-        background-color: white; /* 하얀색 */
-      }
+
       /* 중앙 텍스트 스타일 추가 */
       .center-text1 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 5%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 15%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -65,8 +48,8 @@
 
       .center-text2 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 10%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 21.5%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -85,8 +68,8 @@
 
       .center-text3 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 15%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 28%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -105,8 +88,8 @@
 
       .center-text4 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 20%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 34.5%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -125,8 +108,8 @@
 
       .center-text5 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 25%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 41%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -145,8 +128,8 @@
 
       .center-text6 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 30%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 47.5%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -165,8 +148,8 @@
 
       .center-text7 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 35%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 54%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -185,8 +168,8 @@
 
       .center-text8 {
         position: absolute;
-        left: 3%; /* 첫 번째 세로줄과 일치 */
-        top: 40%; /* 중앙 정렬 */
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 60.5%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         color: white; /* 글자 색상 */
         font-size: 20px; /* 글자 크기 */
@@ -251,13 +234,8 @@
                 << 걸리버 여행기
               </p>
             </a>
-
-            <p style="text-align: center; color: white; font-size: 25px">
-              레시피
-            </p>
             <div class="center-rectangle">
-              <div class="vertical-line1"></div>
-              <div class="vertical-line2"></div>
+              <img src="./back.png" />
 
               <div class="center-text1">1</div>
               <img src="./1.mp4" class="hidden-image1" id="hidden-image1" />
