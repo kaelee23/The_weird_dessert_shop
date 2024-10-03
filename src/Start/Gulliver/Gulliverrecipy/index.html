@@ -403,8 +403,17 @@
         createFallingStar(event.pageX, event.pageY, 'white');
       });
 
+      // 모든 이미지를 숨기는 함수 추가
+      function hideAllImages() {
+        for (let i = 1; i <= 12; i++) {
+          const image = document.getElementById(`hidden-image${i}`);
+          image.style.display = 'none';
+        }
+      }
+
       // "1" 클릭 시 이미지 보이기
       document.querySelector('.center-text1').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
         const image = document.getElementById('hidden-image1');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -414,6 +423,7 @@
 
       // "2" 클릭 시 이미지 보이기
       document.querySelector('.center-text2').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
         const image = document.getElementById('hidden-image2');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -423,6 +433,7 @@
 
       // "3" 클릭 시 이미지 보이기
       document.querySelector('.center-text3').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
         const image = document.getElementById('hidden-image3');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -430,8 +441,9 @@
             : 'none';
       });
 
-      // "4" 클릭 시 이미지 보이기
+      // 동일하게 나머지 버튼 클릭 핸들러들에도 적용
       document.querySelector('.center-text4').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image4');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -439,8 +451,8 @@
             : 'none';
       });
 
-      // "5" 클릭 시 이미지 보이기
       document.querySelector('.center-text5').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image5');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -448,8 +460,8 @@
             : 'none';
       });
 
-      // "6" 클릭 시 이미지 보이기
       document.querySelector('.center-text6').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image6');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -457,16 +469,17 @@
             : 'none';
       });
 
-      // "7" 클릭 시 이미지 보이기
       document.querySelector('.center-text7').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image7');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
             ? 'block'
             : 'none';
       });
-      // "8" 클릭 시 이미지 보이기
+
       document.querySelector('.center-text8').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image8');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -474,8 +487,8 @@
             : 'none';
       });
 
-      // "9" 클릭 시 이미지 보이기
       document.querySelector('.center-text9').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image9');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -483,8 +496,8 @@
             : 'none';
       });
 
-      // "10" 클릭 시 이미지 보이기
       document.querySelector('.center-text10').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image10');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -492,8 +505,8 @@
             : 'none';
       });
 
-      // "11" 클릭 시 이미지 보이기
       document.querySelector('.center-text11').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image11');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
@@ -501,8 +514,8 @@
             : 'none';
       });
 
-      // "12" 클릭 시 이미지 보이기
       document.querySelector('.center-text12').addEventListener('click', () => {
+        hideAllImages();
         const image = document.getElementById('hidden-image12');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
