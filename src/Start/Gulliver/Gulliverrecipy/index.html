@@ -186,7 +186,86 @@
         height: auto; /* 비율 유지 */
       }
 
+      .center-text9 {
+        position: absolute;
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 67%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image9 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 52%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
       /* 애니메이션을 위한 별 스타일 */
+
+      .center-text10 {
+        position: absolute;
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 73.5%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image10 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 52%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
+      .center-text11 {
+        position: absolute;
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 80%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image11 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 52%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
+      .center-text12 {
+        position: absolute;
+        left: 4%; /* 첫 번째 세로줄과 일치 */
+        top: 86.5%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image12 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 52%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
       .falling-star {
         position: absolute;
         clip-path: polygon(
@@ -260,6 +339,18 @@
 
               <div class="center-text8">8</div>
               <img src="./8.mp4" class="hidden-image8" id="hidden-image8" />
+
+              <div class="center-text9">9</div>
+              <img src="./9.mp4" class="hidden-image9" id="hidden-image9" />
+
+              <div class="center-text10">10</div>
+              <img src="./10.mp4" class="hidden-image10" id="hidden-image10" />
+
+              <div class="center-text11">11</div>
+              <img src="./11.mp4" class="hidden-image11" id="hidden-image11" />
+
+              <div class="center-text12">12</div>
+              <img src="./12.mp4" class="hidden-image12" id="hidden-image12" />
             </div>
             <!-- 레시피 아래로 이동 -->
           </div>
@@ -377,6 +468,42 @@
       // "8" 클릭 시 이미지 보이기
       document.querySelector('.center-text8').addEventListener('click', () => {
         const image = document.getElementById('hidden-image8');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "9" 클릭 시 이미지 보이기
+      document.querySelector('.center-text9').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image9');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "10" 클릭 시 이미지 보이기
+      document.querySelector('.center-text10').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image10');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "11" 클릭 시 이미지 보이기
+      document.querySelector('.center-text11').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image11');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "12" 클릭 시 이미지 보이기
+      document.querySelector('.center-text12').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image12');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
             ? 'block'
