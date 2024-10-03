@@ -83,6 +83,26 @@
         height: auto; /* 비율 유지 */
       }
 
+      .center-text3 {
+        position: absolute;
+        left: 3%; /* 첫 번째 세로줄과 일치 */
+        top: 15%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        color: white; /* 글자 색상 */
+        font-size: 20px; /* 글자 크기 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        cursor: pointer; /* 클릭 가능한 커서 */
+      }
+      .hidden-image3 {
+        position: absolute;
+        left: 15%; /* 첫 번째 세로줄 오른쪽 위치 */
+        top: 50%; /* 중앙 정렬 */
+        transform: translateY(-50%); /* 수직 중앙 정렬 */
+        display: none; /* 기본적으로 숨김 */
+        max-width: 50%; /* 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
       /* 애니메이션을 위한 별 스타일 */
       .falling-star {
         position: absolute;
@@ -146,6 +166,10 @@
               <div class="center-text2">2</div>
               <!-- 중앙에 추가된 글자 -->
               <img src="./2.mp4" class="hidden-image2" id="hidden-image2" />
+
+              <div class="center-text3">3</div>
+              <!-- 중앙에 추가된 글자 -->
+              <img src="./3.mp4" class="hidden-image3" id="hidden-image3" />
               <!-- 이미지 추가 -->
             </div>
             <!-- 레시피 아래로 이동 -->
@@ -211,6 +235,15 @@
       // "2" 클릭 시 이미지 보이기
       document.querySelector('.center-text2').addEventListener('click', () => {
         const image = document.getElementById('hidden-image2');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "3" 클릭 시 이미지 보이기
+      document.querySelector('.center-text3').addEventListener('click', () => {
+        const image = document.getElementById('hidden-image3');
         image.style.display =
           image.style.display === 'none' || image.style.display === ''
             ? 'block'
