@@ -43,24 +43,9 @@
         }
       }
       /* 가로 100px 세로 1000px 사각형 */
-      .container {
-        display: flex;
-        justify-content: flex-start; /* 왼쪽 정렬 */
-        align-items: center; /* 세로 중앙 정렬 */
-        position: relative; /* 추가: 자식 요소의 절대 위치를 기준으로 설정 */
-      }
-
-      img {
-        border: 1px solid lightgray;
-        width: 50%; /* 이미지 크기 조정 */
-        margin-right: -30px; /* 이미지와 메뉴박스 사이 여백 */
-        transform: rotate(-20deg); /* 이미지를 왼쪽으로 15도 회전 */
-        position: relative; /* 위치 조정을 위해 relative 추가 */
-        top: -250px; /* 이미지를 10px 위로 이동 */
-      }
 
       .menu-box {
-        width: 500px;
+        width: 1000px;
         height: 1050px; /* 스크롤 가능하게 보이도록 영역 제한 */
         background-color: rgb(255, 255, 255); /* 반투명하게 설정 */
         overflow-y: scroll; /* 세로 스크롤 생성 */
@@ -68,7 +53,11 @@
         font-size: 20px;
         text-align: center;
         padding: 10px;
-        position: relative;
+        position: absolute; /* 절대 위치 지정 */
+        left: 50%; /* 화면의 왼쪽에서 50% 이동 */
+        transform: translateX(
+          -50%
+        ); /* 요소 너비의 절반만큼 왼쪽으로 이동해서 가운데 정렬 */
         background-image: url('종이.jpg'); /* 배경 이미지 추가 */
         background-size: cover; /* 이미지가 박스 크기에 맞춰짐 */
         background-position: center; /* 이미지가 중앙에 배치됨 */
@@ -102,185 +91,180 @@
       </header>
       <main></main>
       <section>
-        <div class="container">
-          <img src="./store.jpg" />
-          <!-- 네모 추가 -->
-          <div class="menu-box">
-            <div class="inner-content">
-              <ul>
-                <p
-                  style="
-                    color: rgb(48, 48, 48);
-                    font-size: 27px;
-                    text-align: center;
-                    font-weight: bold;
-                  ">
-                  -MENU-
-                </p>
-                <br />
-                <br />
-                <li>
-                  <a href="./Gulliver/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                      ">
-                      걸리버 여행기(Gulliver's Travels)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)" ;>
-                        Jonathan Swift
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>그곳 사람들의 키는 보통 15센티미터를 약간 밑돈다.</i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)" ;>
-                      <i>
-                        그리고 나무나 기타 식물, 모든 동물의 키도 그에 정확히
-                        비례한다.
-                      </i>
-                    </div>
-                  </a>
-                </li>
-                <br />
-                <br />
-                <li>
-                  <a href="./Frankenstein/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                      ">
-                      프랑켄슈타인(Frankenstein)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)">
-                        Mary Shelley
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>
-                        창조주여, 저를 흙으로 빚어 인간으로 만들라고 제가
-                        요청했습니까?
-                      </i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>어둠에서 끌어내 달라고 제가 애원이라도 했습니까?</i>
-                    </div>
-                  </a>
-                </li>
-                <br />
-                <br />
-                <li>
-                  <a href="./Red/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                      ">
-                      빨간머리 앤(Anne of Green Gables)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)">
-                        Lucy Maud Montgomery
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>상상할 때는 가치 있는 것을 상상하는 게 좋아.</i>
-                    </div>
-                  </a>
-                </li>
-                <br />
-                <br />
-                <li>
-                  <a href="./when buckwheat flowers bloom/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                        white-space: nowrap;
-                      ">
-                      메밀꽃 필 무렵(when buckwheat flowers bloom)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)">
-                        이효석
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>달은 지금 긴 산허리에 걸려있다.</i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>
-                        산허리는 온통 메밀밭이어서 피기 시작한 꽃이 소금을
-                        뿌린듯이
-                      </i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>흐붓한 달빛에 숨이 막힐 지경이다.</i>
-                    </div>
-                  </a>
-                </li>
-                <br />
-                <br />
-                <li>
-                  <a href="./Momo/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                        white-space: nowrap;
-                      ">
-                      모모(Momo)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)">
-                        Michael Ende
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>시간은 삶이며, 삶은 가슴속에 깃들여 있는 것이다.</i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>
-                        사람들은 시간을 아끼면 아낄수록 가진 것이 점점
-                        즐어들었다.
-                      </i>
-                    </div>
-                  </a>
-                </li>
-                <br />
-                <br />
-                <li>
-                  <a href="./Rain/index.html">
-                    <p
-                      style="
-                        color: rgb(0, 0, 0);
-                        font-size: 16px;
-                        text-align: center;
-                        white-space: nowrap;
-                      ">
-                      소나기(shower)
-                      <br />
-                      <span style="font-size: 14px; color: rgb(87, 87, 87)">
-                        황순원
-                      </span>
-                    </p>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>소녀의 흰 얼굴이, 분홍 스웨터가, 남색 스커트가,</i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>안고 있는 꽃과 함께 범벅된다.</i>
-                    </div>
-                    <div style="font-size: 12px; color: rgb(130, 130, 130)">
-                      <i>모두가 하나의 큰 꽃묶음 같다. 어지럽다.</i>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <div class="menu-box">
+          <div class="inner-content">
+            <ul>
+              <p
+                style="
+                  color: rgb(48, 48, 48);
+                  font-size: 30px;
+                  text-align: center;
+                  font-weight: bold;
+                ">
+                -MENU-
+              </p>
+              <br />
+              <br />
+              <li>
+                <a href="./Gulliver/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                    ">
+                    걸리버 여행기(Gulliver's Travels)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)" ;>
+                      Jonathan Swift
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>그곳 사람들의 키는 보통 15센티미터를 약간 밑돈다.</i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)" ;>
+                    <i>
+                      그리고 나무나 기타 식물, 모든 동물의 키도 그에 정확히
+                      비례한다.
+                    </i>
+                  </div>
+                </a>
+              </li>
+              <br />
+              <br />
+              <li>
+                <a href="./Frankenstein/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                    ">
+                    프랑켄슈타인(Frankenstein)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)">
+                      Mary Shelley
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>
+                      창조주여, 저를 흙으로 빚어 인간으로 만들라고 제가
+                      요청했습니까?
+                    </i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>어둠에서 끌어내 달라고 제가 애원이라도 했습니까?</i>
+                  </div>
+                </a>
+              </li>
+              <br />
+              <br />
+              <li>
+                <a href="./Red/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                    ">
+                    빨간머리 앤(Anne of Green Gables)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)">
+                      Lucy Maud Montgomery
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>상상할 때는 가치 있는 것을 상상하는 게 좋아.</i>
+                  </div>
+                </a>
+              </li>
+              <br />
+              <br />
+              <li>
+                <a href="./when buckwheat flowers bloom/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                      white-space: nowrap;
+                    ">
+                    메밀꽃 필 무렵(when buckwheat flowers bloom)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)">
+                      이효석
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>달은 지금 긴 산허리에 걸려있다.</i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>
+                      산허리는 온통 메밀밭이어서 피기 시작한 꽃이 소금을
+                      뿌린듯이
+                    </i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>흐붓한 달빛에 숨이 막힐 지경이다.</i>
+                  </div>
+                </a>
+              </li>
+              <br />
+              <br />
+              <li>
+                <a href="./Momo/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                      white-space: nowrap;
+                    ">
+                    모모(Momo)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)">
+                      Michael Ende
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>시간은 삶이며, 삶은 가슴속에 깃들여 있는 것이다.</i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>
+                      사람들은 시간을 아끼면 아낄수록 가진 것이 점점 즐어들었다.
+                    </i>
+                  </div>
+                </a>
+              </li>
+              <br />
+              <br />
+              <li>
+                <a href="./Rain/index.html">
+                  <p
+                    style="
+                      color: rgb(0, 0, 0);
+                      font-size: 20px;
+                      text-align: center;
+                      white-space: nowrap;
+                    ">
+                    소나기(shower)
+                    <br />
+                    <span style="font-size: 17px; color: rgb(87, 87, 87)">
+                      황순원
+                    </span>
+                  </p>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>소녀의 흰 얼굴이, 분홍 스웨터가, 남색 스커트가,</i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>안고 있는 꽃과 함께 범벅된다.</i>
+                  </div>
+                  <div style="font-size: 15px; color: rgb(130, 130, 130)">
+                    <i>모두가 하나의 큰 꽃묶음 같다. 어지럽다.</i>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
