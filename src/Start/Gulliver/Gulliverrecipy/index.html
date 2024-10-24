@@ -294,6 +294,12 @@
           ); /* 화면 하단까지 떨어지게 */
         }
       }
+      /* 가로로 이미지 배치 */
+      .image-container {
+        display: flex;
+        align-items: center; /* 세로 가운데 정렬 */
+        gap: 50px; /* 이미지 사이 여백 */
+      }
     </style>
   </head>
   <body>
@@ -301,17 +307,22 @@
       <header>
         <section>
           <div class="container">
-            <a
-              href="https://kaelee23.github.io/The_weird_dessert_shop/src/Start/index.html">
-              <p style="color: rgb(184, 184, 184); font-size: 15px">
-                << 메뉴 소개로 돌아가기
-              </p>
-            </a>
-            <a href="../../Gulliver/index.html">
-              <p style="color: rgb(184, 184, 184); font-size: 15px">
-                << 걸리버 여행기
-              </p>
-            </a>
+            <div class="image-container">
+              <a
+                href="https://kaelee23.github.io/The_weird_dessert_shop/src/Start/index.html">
+                <img
+                  src="menu.png"
+                  alt="Menu"
+                  style="width: 40px; height: auto" />
+              </a>
+              <a href="../../Gulliver/index.html">
+                <!-- 걸리버 여행기 텍스트 대신 cru.jpg 이미지로 대체 -->
+                <img
+                  src="cru.PNG"
+                  alt="걸리버 여행기"
+                  style="width: 65px; height: auto" />
+              </a>
+            </div>
             <div class="center-rectangle">
               <img src="./com.png" />
 
