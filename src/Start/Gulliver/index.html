@@ -40,6 +40,34 @@
           ); /* 화면 하단까지 떨어지게 */
         }
       }
+
+      /* 팝업 스타일 */
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* 팝업이 다른 요소들 위에 오도록 */
+      }
+
+      #popup img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #close-popup {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -70,11 +98,41 @@
               Gulliver's Travels
             </p>
             <center>
-              <img src="./IMG_4107_1.mp4" style="width: 120%" />
+              <video
+                id="default-video"
+                src="./IMG_4107_1.mp4"
+                style="width: 120%; margin-top: 20px"
+                autoplay
+                muted
+                loop></video>
+              <video
+                id="hover-video"
+                src="./matt.mp4"
+                style="width: 120%; margin-top: 20px"
+                autoplay
+                muted
+                loop></video>
+
+              <script>
+                const defaultVideo = document.getElementById('default-video');
+                const hoverVideo = document.getElementById('hover-video');
+
+                // 마우스를 올렸을 때 '맛.mp4' 동영상 표시
+                defaultVideo.addEventListener('mouseover', () => {
+                  defaultVideo.style.display = 'none'; // 기본 동영상 숨기기
+                  hoverVideo.style.display = 'block'; // '맛.mp4' 동영상 표시
+                });
+
+                // 마우스를 벗어났을 때 'IMG_4107_1.mp4' 동영상으로 복원
+                hoverVideo.addEventListener('mouseout', () => {
+                  hoverVideo.style.display = 'none'; // '맛.mp4' 동영상 숨기기
+                  defaultVideo.style.display = 'block'; // 기본 동영상 다시 표시
+                });
+              </script>
             </center>
             <div style="display: inline">
               <center>
-                <a href="./Gulliversummer/index.html">
+                <a href="javascript:void(0);" onclick="showPopup()">
                   <p
                     style="
                       color: rgb(255, 255, 255);
@@ -111,6 +169,13 @@
         </section>
       </footer>
     </div>
+
+    <!-- 팝업 이미지 컨테이너 -->
+    <div id="popup">
+      <span id="close-popup" onclick="closePopup()">&times;</span>
+      <img src="rjfflqj qorud.jpg" alt="팝업 이미지" />
+    </div>
+
     <script>
       // RGB 색상을 반환하는 함수 수정
       function getRandomColor() {
@@ -148,16 +213,14 @@
         createFallingStar(event.pageX, event.pageY, 'white');
       });
 
-      // 이미지 교체를 위한 JavaScript 수정
-      const images = ['store1.png', 'store2.png', 'store3.png']; // 교체할 이미지 배열
-      let currentIndex = 0; // 현재 이미지의 인덱스
+      // 팝업 기능
+      function showPopup() {
+        document.getElementById('popup').style.display = 'flex';
+      }
 
-      setInterval(() => {
-        const imageElement = document.getElementById('toggle-image');
-        // 배열의 다음 이미지로 변경
-        currentIndex = (currentIndex + 1) % images.length;
-        imageElement.src = `./${images[currentIndex]}`; // 템플릿 리터럴 사용
-      }, 3000); // 3초마다 이미지 교체
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
     </script>
   </body>
 </html>
