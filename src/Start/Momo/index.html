@@ -40,6 +40,38 @@
           ); /* 화면 하단까지 떨어지게 */
         }
       }
+
+      /* 팝업 스타일 */
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      #popup img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #close-popup {
+        position: absolute;
+        top: 5%; /* 상단에 위치 */
+        right: 5%; /* 오른쪽에 위치 */
+        background-color: #333;
+        color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -72,14 +104,14 @@
             </center>
             <div style="display: inline">
               <center>
-                <a href="./MomoSummer/index.html">
+                <a href="javascript:void(0);" onclick="showPopup()">
                   <p
                     style="
                       color: rgb(255, 255, 255);
                       font-size: 20px;
                       display: inline;
                     ">
-                    정보
+                    이야기
                   </p>
                 </a>
 
@@ -109,6 +141,13 @@
         </section>
       </footer>
     </div>
+
+    <!-- 팝업 이미지 컨테이너 -->
+    <div id="popup">
+      <button id="close-popup" onclick="closePopup()">닫기</button>
+      <img src="momostory.jpg" alt="팝업 이미지" />
+    </div>
+
     <script>
       // RGB 색상을 반환하는 함수 수정
       function getRandomColor() {
@@ -145,6 +184,14 @@
       window.addEventListener('click', (event) => {
         createFallingStar(event.pageX, event.pageY, 'white');
       });
+
+      function showPopup() {
+        document.getElementById('popup').style.display = 'flex';
+      }
+
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
     </script>
   </body>
 </html>
