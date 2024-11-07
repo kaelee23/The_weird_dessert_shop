@@ -55,6 +55,35 @@
         max-width: 50%;
         height: auto;
       }
+      .falling-star {
+        position: absolute;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        background-color: yellow; /* 별 색상 */
+        pointer-events: none; /* 클릭 방지 */
+        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+      }
+
+      @keyframes fall {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(
+            calc(100vh - 10px)
+          ); /* 화면 하단까지 떨어지게 */
+        }
+      }
       .image-container {
         display: flex;
         align-items: center; /* 세로 가운데 정렬 */
@@ -107,65 +136,161 @@
         </section>
       </header>
       <script>
-        // 모든 이미지를 숨기고 모든 텍스트 색상을 초기화하는 함수
-        function hideAllImages() {
-          for (let i = 1; i <= 12; i++) {
-            const image = document.getElementById(`hidden-image${i}`);
-            image.style.display = 'none';
-          }
-          // 모든 .center-text의 색상을 흰색으로 초기화
-          document.querySelectorAll('.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6, .center-text7, .center-text8, .center-text9, .center-text10, .center-text11, .center-text12, .center-text-recipy1')
-            .forEach(element => {
-              element.style.color = 'white';
+        // RGB 색상을 반환하는 함수 수정
+        function getRandomColor() {
+          const r = Math.floor(Math.random() * 255);
+          const g = Math.floor(Math.random() * 150);
+          const b = Math.floor(Math.random() * 0);
+          return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
+        }
+  
+        function getRandomSize() {
+          return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
+        }
+  
+        function createFallingStar(x, y, color = getRandomColor()) {
+          const star = document.createElement('div');
+          const size = getRandomSize();
+          star.classList.add('falling-star');
+          star.style.backgroundColor = color;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.left = `${x - size / 2}px`;
+          star.style.top = `${y - size / 2}px`;
+          document.body.appendChild(star);
+  
+          star.addEventListener('animationend', () => {
+            star.remove();
           });
         }
-
-        // 텍스트 클릭 시 이미지 표시 및 색상 변경 함수
-        function showImageAndChangeColor(textClass, imageId) {
-          hideAllImages(); // 다른 이미지 숨기기 및 텍스트 색상 초기화
-          const image = document.getElementById(imageId);
-          image.style.display = image.style.display === 'none' ? 'block' : 'none';
-          document.querySelector(`.${textClass}`).style.color = 'yellow';
-          document.querySelector('.center-text-recipy1').style.color = 'yellow';
+  
+        window.addEventListener('mousemove', (event) => {
+          createFallingStar(event.pageX, event.pageY);
+        });
+  
+        window.addEventListener('click', (event) => {
+          createFallingStar(event.pageX, event.pageY, 'white');
+        });
+        // 모든 이미지를 숨기는 함수 추가
+      function hideAllImages() {
+        for (let i = 1; i <= 12; i++) {
+          const image = document.getElementById(`hidden-image${i}`);
+          image.style.display = 'none';
         }
+      }
 
-        // 각 .center-text에 클릭 이벤트 추가
-        document.querySelector('.center-text1').addEventListener('click', () => {
-          showImageAndChangeColor('center-text1', 'hidden-image1');
-        });
-        document.querySelector('.center-text2').addEventListener('click', () => {
-          showImageAndChangeColor('center-text2', 'hidden-image2');
-        });
-        document.querySelector('.center-text3').addEventListener('click', () => {
-          showImageAndChangeColor('center-text3', 'hidden-image3');
-        });
-        document.querySelector('.center-text4').addEventListener('click', () => {
-          showImageAndChangeColor('center-text4', 'hidden-image4');
-        });
-        document.querySelector('.center-text5').addEventListener('click', () => {
-          showImageAndChangeColor('center-text5', 'hidden-image5');
-        });
-        document.querySelector('.center-text6').addEventListener('click', () => {
-          showImageAndChangeColor('center-text6', 'hidden-image6');
-        });
-        document.querySelector('.center-text7').addEventListener('click', () => {
-          showImageAndChangeColor('center-text7', 'hidden-image7');
-        });
-        document.querySelector('.center-text8').addEventListener('click', () => {
-          showImageAndChangeColor('center-text8', 'hidden-image8');
-        });
-        document.querySelector('.center-text9').addEventListener('click', () => {
-          showImageAndChangeColor('center-text9', 'hidden-image9');
-        });
-        document.querySelector('.center-text10').addEventListener('click', () => {
-          showImageAndChangeColor('center-text10', 'hidden-image10');
-        });
-        document.querySelector('.center-text11').addEventListener('click', () => {
-          showImageAndChangeColor('center-text11', 'hidden-image11');
-        });
-        document.querySelector('.center-text12').addEventListener('click', () => {
-          showImageAndChangeColor('center-text12', 'hidden-image12');
-        });
+      // "1" 클릭 시 이미지 보이기
+      document.querySelector('.center-text1').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
+        const image = document.getElementById('hidden-image1');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "2" 클릭 시 이미지 보이기
+      document.querySelector('.center-text2').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
+        const image = document.getElementById('hidden-image2');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // "3" 클릭 시 이미지 보이기
+      document.querySelector('.center-text3').addEventListener('click', () => {
+        hideAllImages(); // 다른 이미지 숨기기
+        const image = document.getElementById('hidden-image3');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      // 동일하게 나머지 버튼 클릭 핸들러들에도 적용
+      document.querySelector('.center-text4').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image4');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text5').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image5');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text6').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image6');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text7').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image7');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text8').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image8');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text9').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image9');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+  
+      document.querySelector('.center-text10').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image10');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+  
+      document.querySelector('.center-text11').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image11');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+
+      document.querySelector('.center-text12').addEventListener('click', () => {
+        hideAllImages();
+        const image = document.getElementById('hidden-image12');
+        image.style.display =
+          image.style.display === 'none' || image.style.display === ''
+            ? 'block'
+            : 'none';
+      });
+  
   
     </script>
   </body>
