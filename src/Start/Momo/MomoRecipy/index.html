@@ -275,13 +275,44 @@
         createFallingStar(event.pageX, event.pageY, 'white');
       });
 
-      // 모든 이미지를 숨기는 함수 추가
+      // 모든 이미지를 숨기는 함수
       function hideAllImages() {
         for (let i = 1; i <= 6; i++) {
           const image = document.getElementById(`hidden-image${i}`);
           image.style.display = 'none';
         }
       }
+
+      // 모든 center-text 요소의 색상을 흰색으로 초기화하는 함수
+      function resetTextColor() {
+        document
+          .querySelectorAll(
+            '.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6'
+          )
+          .forEach((element) => {
+            element.style.color = 'white';
+          });
+      }
+
+      // 모든 center-text 요소에 대해 클릭 이벤트 추가
+      document
+        .querySelectorAll(
+          '.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6'
+        )
+        .forEach((element, index) => {
+          element.addEventListener('click', () => {
+            hideAllImages(); // 모든 이미지를 숨김
+            resetTextColor(); // 모든 텍스트 색상을 흰색으로 초기화
+            element.style.color = 'yellow'; // 클릭된 텍스트만 노란색으로 변경
+
+            // 해당 요소에 맞는 이미지를 보이기
+            const image = document.getElementById(`hidden-image${index + 1}`);
+            image.style.display =
+              image.style.display === 'none' || image.style.display === ''
+                ? 'block'
+                : 'none';
+          });
+        });
 
       // "1" 클릭 시 이미지 보이기
       document.querySelector('.center-text1').addEventListener('click', () => {

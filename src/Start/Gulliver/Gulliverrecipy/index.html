@@ -171,6 +171,29 @@
         window.addEventListener('click', (event) => {
           createFallingStar(event.pageX, event.pageY, 'white');
         });
+
+// 모든 .center-text 요소의 색상을 흰색으로 초기화하는 함수
+function resetTextColor() {
+  document.querySelectorAll('.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6, .center-text7, .center-text8, .center-text9, .center-text10, .center-text11, .center-text12').forEach((element) => {
+    element.style.color = 'white';
+  });
+}
+
+// 모든 .center-text 요소에 대해 클릭 이벤트를 추가
+document.querySelectorAll('.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6, .center-text7, .center-text8, .center-text9, .center-text10, .center-text11, .center-text12').forEach((element, index) => {
+  element.addEventListener('click', () => {
+    hideAllImages();      // 모든 이미지를 숨기기
+    resetTextColor();      // 다른 요소들의 색상을 흰색으로 초기화
+    element.style.color = 'yellow';  // 클릭된 요소의 색상을 노란색으로 변경
+
+    // 해당 요소에 맞는 이미지를 보여주기
+    const image = document.getElementById(`hidden-image${index + 1}`);
+    image.style.display = image.style.display === 'none' || image.style.display === '' ? 'block' : 'none';
+  });
+});
+
+
+
         // 모든 이미지를 숨기는 함수 추가
       function hideAllImages() {
         for (let i = 1; i <= 12; i++) {
