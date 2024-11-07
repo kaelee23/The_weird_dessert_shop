@@ -11,296 +11,50 @@
     <link rel="stylesheet" href="../../../../style/style.css" />
     <style>
       .center-rectangle {
-        position: relative; /* 절대 위치 설정 */
-        top: calc(
-          25px
-        ); /* "레시피" 텍스트 아래에 위치 (25px은 레시피의 높이, 50px은 상단 여백) */
-        left: 50%; /* 화면의 50% 지점에 위치 */
-        transform: translate(-50%, 0); /* x축으로 중앙 정렬 */
-        width: 70vw; /* 뷰포트 너비의 70%로 조정 */
-        height: 35vw; /* 뷰포트 너비의 35%로 조정 (16:9 비율 유지) */
+        position: relative;
+        top: 25px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 70vw;
+        height: 35vw;
         max-width: 1921px;
       }
-
-      /* 세로줄 스타일 추가 */
-
-      /* 중앙 텍스트 스타일 추가 */
-      .center-text1 {
+ 
+      .center-text1, .center-text2, .center-text3, .center-text4, .center-text5,
+      .center-text6, .center-text7, .center-text8, .center-text9, .center-text10,
+      .center-text11, .center-text12 {
         position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 19%; /* 17%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
+        transform: translateY(-50%);
+        left: 6.5%;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
       }
-      /* 이미지 스타일 추가 */
-      .hidden-image1 {
+      /* 각 .center-text의 위치 조정 */
+      .center-text1 { top: 19%; }
+      .center-text2 { top: 26.1%; }
+      .center-text3 { top: 33.2%; }
+      .center-text4 { top: 40.3%; }
+      .center-text5 { top: 47.4%; }
+      .center-text6 { top: 54.5%; }
+      .center-text7 { top: 61.6%; }
+      .center-text8 { top: 68.7%; }
+      .center-text9 { top: 75.8%; }
+      .center-text10 { top: 82.9%; }
+      .center-text11 { top: 90%; }
+      .center-text12 { top: 97.1%; }
+      .hidden-image1, .hidden-image2, .hidden-image3, .hidden-image4,
+      .hidden-image5, .hidden-image6, .hidden-image7, .hidden-image8,
+      .hidden-image9, .hidden-image10, .hidden-image11, .hidden-image12 {
         position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
+        left: 16%;
+        top: 57%;
+        transform: translateY(-50%);
+        display: none;
+        max-width: 50%;
+        height: auto;
       }
-      .center-text2 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 26.1%; /* 23.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image2 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text3 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 33.2%; /* 30%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image3 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text4 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 40.3%; /* 36.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image4 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-      .center-text5 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 47.4%; /* 43%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image5 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-      .center-text6 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 54.5%; /* 49.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-      .hidden-image6 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text7 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 61.6%; /* 56%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image7 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text8 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 68.7%; /* 62.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image8 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text9 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 75.8%; /* 69%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image9 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-      /* 애니메이션을 위한 별 스타일 */
-
-      .center-text10 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 82.9%; /* 75.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-
-      .hidden-image10 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text11 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 90%; /* 82%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-      .hidden-image11 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-
-      .center-text12 {
-        position: absolute;
-        left: 6.5%; /* 첫 번째 세로줄과 일치 */
-        top: 97.1%; /* 88.5%에서 2% 아래로 이동 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        color: white; /* 글자 색상 */
-        font-size: 20px; /* 글자 크기 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        cursor: pointer; /* 클릭 가능한 커서 */
-      }
-      .hidden-image12 {
-        position: absolute;
-        left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
-        transform: translateY(-50%); /* 수직 중앙 정렬 */
-        display: none; /* 기본적으로 숨김 */
-        max-width: 50%; /* 이미지 크기 조정 */
-        height: auto; /* 비율 유지 */
-      }
-      .falling-star {
-        position: absolute;
-        clip-path: polygon(
-          50% 0%,
-          61% 35%,
-          98% 35%,
-          68% 57%,
-          79% 91%,
-          50% 70%,
-          21% 91%,
-          32% 57%,
-          2% 35%,
-          39% 35%
-        );
-        background-color: yellow; /* 별 색상 */
-        pointer-events: none; /* 클릭 방지 */
-        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
-      }
-
-      @keyframes fall {
-        from {
-          transform: translateY(0);
-        }
-        to {
-          transform: translateY(
-            calc(100vh - 10px)
-          ); /* 화면 하단까지 떨어지게 */
-        }
-      }
-      /* 가로로 이미지 배치 */
       .image-container {
         display: flex;
         align-items: center; /* 세로 가운데 정렬 */
@@ -314,242 +68,105 @@
         <section>
           <div class="container">
             <div class="image-container" style="text-align: left">
-              <a
-                href="https://kaelee23.github.io/The_weird_dessert_shop/src/Start/index.html">
-                <img
-                  src="menu1.png"
-                  alt="Menu"
-                  style="width: 80px; height: auto; margin-right: 20px" />
+              <a href="https://kaelee23.github.io/The_weird_dessert_shop/src/Start/index.html">
+                <img src="menu1.png" alt="Menu" style="width: 80px; height: auto; margin-right: 20px" />
               </a>
               <a href="../../Gulliver/index.html">
-                <!-- 걸리버 여행기 텍스트 대신 cru.jpg 이미지로 대체 -->
-
-                <img
-                  src="modoru.png"
-                  alt="걸리버 여행기"
-                  style="width: 80px; height: auto" />
+                <img src="modoru.png" alt="걸리버 여행기" style="width: 80px; height: auto" />
               </a>
             </div>
-
             <div class="center-rectangle">
               <img src="./comgu.png" />
-
               <div class="center-text1">①</div>
               <img src="./1-2.mp4" class="hidden-image1" id="hidden-image1" />
-
               <div class="center-text2">❷</div>
               <img src="./2-2.mp4" class="hidden-image2" id="hidden-image2" />
-
               <div class="center-text3">③</div>
-
               <img src="./3-2.mp4" class="hidden-image3" id="hidden-image3" />
-
               <div class="center-text4">❹</div>
               <img src="./4-2.mp4" class="hidden-image4" id="hidden-image4" />
-
               <div class="center-text5">⑤</div>
               <img src="./5-2.mp4" class="hidden-image5" id="hidden-image5" />
-
               <div class="center-text6">❻</div>
               <img src="./6-2.mp4" class="hidden-image6" id="hidden-image6" />
-
               <div class="center-text7">⑦</div>
               <img src="./7-22.mp4" class="hidden-image7" id="hidden-image7" />
-
               <div class="center-text8">❽</div>
               <img src="./8-2.mp4" class="hidden-image8" id="hidden-image8" />
-
               <div class="center-text9">⑨</div>
               <img src="./9-2.mp4" class="hidden-image9" id="hidden-image9" />
-
               <div class="center-text10">❿</div>
-              <img
-                src="./10-2.mp4"
-                class="hidden-image10"
-                id="hidden-image10" />
-
+              <img src="./10-2.mp4" class="hidden-image10" id="hidden-image10" />
               <div class="center-text11">⑪</div>
-              <img
-                src="./11-2.mp4"
-                class="hidden-image11"
-                id="hidden-image11" />
-
+              <img src="./11-2.mp4" class="hidden-image11" id="hidden-image11" />
               <div class="center-text12">⓬</div>
-              <img
-                src="./12-2.mp4"
-                class="hidden-image12"
-                id="hidden-image12" />
+              <img src="./12-2.mp4" class="hidden-image12" id="hidden-image12" />
+           
             </div>
-            <!-- 레시피 아래로 이동 -->
           </div>
         </section>
       </header>
-      <main></main>
-      <section>
-        <div class="container"></div>
-      </section>
-      <footer>
-        <section>
-          <div class="container"></div>
-        </section>
-      </footer>
-    </div>
-    <script>
-      // RGB 색상을 반환하는 함수 수정
-      function getRandomColor() {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 150);
-        const b = Math.floor(Math.random() * 0);
-        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
-      }
-
-      function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
-      }
-
-      function createFallingStar(x, y, color = getRandomColor()) {
-        const star = document.createElement('div');
-        const size = getRandomSize();
-        star.classList.add('falling-star');
-        star.style.backgroundColor = color;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${x - size / 2}px`;
-        star.style.top = `${y - size / 2}px`;
-        document.body.appendChild(star);
-
-        star.addEventListener('animationend', () => {
-          star.remove();
-        });
-      }
-
-      window.addEventListener('mousemove', (event) => {
-        createFallingStar(event.pageX, event.pageY);
-      });
-
-      window.addEventListener('click', (event) => {
-        createFallingStar(event.pageX, event.pageY, 'white');
-      });
-
-      // 모든 이미지를 숨기는 함수 추가
-      function hideAllImages() {
-        for (let i = 1; i <= 12; i++) {
-          const image = document.getElementById(`hidden-image${i}`);
-          image.style.display = 'none';
+      <script>
+        // 모든 이미지를 숨기고 모든 텍스트 색상을 초기화하는 함수
+        function hideAllImages() {
+          for (let i = 1; i <= 12; i++) {
+            const image = document.getElementById(`hidden-image${i}`);
+            image.style.display = 'none';
+          }
+          // 모든 .center-text의 색상을 흰색으로 초기화
+          document.querySelectorAll('.center-text1, .center-text2, .center-text3, .center-text4, .center-text5, .center-text6, .center-text7, .center-text8, .center-text9, .center-text10, .center-text11, .center-text12, .center-text-recipy1')
+            .forEach(element => {
+              element.style.color = 'white';
+          });
         }
-      }
 
-      // "1" 클릭 시 이미지 보이기
-      document.querySelector('.center-text1').addEventListener('click', () => {
-        hideAllImages(); // 다른 이미지 숨기기
-        const image = document.getElementById('hidden-image1');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
+        // 텍스트 클릭 시 이미지 표시 및 색상 변경 함수
+        function showImageAndChangeColor(textClass, imageId) {
+          hideAllImages(); // 다른 이미지 숨기기 및 텍스트 색상 초기화
+          const image = document.getElementById(imageId);
+          image.style.display = image.style.display === 'none' ? 'block' : 'none';
+          document.querySelector(`.${textClass}`).style.color = 'yellow';
+          document.querySelector('.center-text-recipy1').style.color = 'yellow';
+        }
 
-      // "2" 클릭 시 이미지 보이기
-      document.querySelector('.center-text2').addEventListener('click', () => {
-        hideAllImages(); // 다른 이미지 숨기기
-        const image = document.getElementById('hidden-image2');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      // "3" 클릭 시 이미지 보이기
-      document.querySelector('.center-text3').addEventListener('click', () => {
-        hideAllImages(); // 다른 이미지 숨기기
-        const image = document.getElementById('hidden-image3');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      // 동일하게 나머지 버튼 클릭 핸들러들에도 적용
-      document.querySelector('.center-text4').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image4');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text5').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image5');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text6').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image6');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text7').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image7');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text8').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image8');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text9').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image9');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text10').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image10');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text11').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image11');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
-
-      document.querySelector('.center-text12').addEventListener('click', () => {
-        hideAllImages();
-        const image = document.getElementById('hidden-image12');
-        image.style.display =
-          image.style.display === 'none' || image.style.display === ''
-            ? 'block'
-            : 'none';
-      });
+        // 각 .center-text에 클릭 이벤트 추가
+        document.querySelector('.center-text1').addEventListener('click', () => {
+          showImageAndChangeColor('center-text1', 'hidden-image1');
+        });
+        document.querySelector('.center-text2').addEventListener('click', () => {
+          showImageAndChangeColor('center-text2', 'hidden-image2');
+        });
+        document.querySelector('.center-text3').addEventListener('click', () => {
+          showImageAndChangeColor('center-text3', 'hidden-image3');
+        });
+        document.querySelector('.center-text4').addEventListener('click', () => {
+          showImageAndChangeColor('center-text4', 'hidden-image4');
+        });
+        document.querySelector('.center-text5').addEventListener('click', () => {
+          showImageAndChangeColor('center-text5', 'hidden-image5');
+        });
+        document.querySelector('.center-text6').addEventListener('click', () => {
+          showImageAndChangeColor('center-text6', 'hidden-image6');
+        });
+        document.querySelector('.center-text7').addEventListener('click', () => {
+          showImageAndChangeColor('center-text7', 'hidden-image7');
+        });
+        document.querySelector('.center-text8').addEventListener('click', () => {
+          showImageAndChangeColor('center-text8', 'hidden-image8');
+        });
+        document.querySelector('.center-text9').addEventListener('click', () => {
+          showImageAndChangeColor('center-text9', 'hidden-image9');
+        });
+        document.querySelector('.center-text10').addEventListener('click', () => {
+          showImageAndChangeColor('center-text10', 'hidden-image10');
+        });
+        document.querySelector('.center-text11').addEventListener('click', () => {
+          showImageAndChangeColor('center-text11', 'hidden-image11');
+        });
+        document.querySelector('.center-text12').addEventListener('click', () => {
+          showImageAndChangeColor('center-text12', 'hidden-image12');
+        });
+  
     </script>
   </body>
 </html>
