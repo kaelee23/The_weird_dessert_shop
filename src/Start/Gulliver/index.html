@@ -25,9 +25,9 @@
           2% 35%,
           39% 35%
         );
-        background-color: yellow; /* 별 색상 */
-        pointer-events: none; /* 클릭 방지 */
-        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+        background-color: yellow;
+        pointer-events: none;
+        animation: fall 5s linear forwards;
       }
 
       @keyframes fall {
@@ -35,9 +35,7 @@
           transform: translateY(0);
         }
         to {
-          transform: translateY(
-            calc(100vh - 10px)
-          ); /* 화면 하단까지 떨어지게 */
+          transform: translateY(calc(100vh - 10px));
         }
       }
 
@@ -52,7 +50,7 @@
         background-color: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
-        z-index: 1000; /* 팝업이 다른 요소들 위에 오도록 */
+        z-index: 1000;
       }
 
       #popup img {
@@ -64,9 +62,13 @@
         position: absolute;
         top: 20px;
         right: 20px;
+        background-color: #333;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
+        padding: 10px 20px;
         cursor: pointer;
+        border: none;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -105,7 +107,7 @@
               <video
                 id="hover-video"
                 src="./matt.mp4"
-                style="width: 120%; margin-top: 20px"
+                style="width: 120%; margin-top: 20px; display: none"
                 autoplay
                 muted
                 loop></video>
@@ -114,16 +116,14 @@
                 const defaultVideo = document.getElementById('default-video');
                 const hoverVideo = document.getElementById('hover-video');
 
-                // 마우스를 올렸을 때 '맛.mp4' 동영상 표시
                 defaultVideo.addEventListener('mouseover', () => {
-                  defaultVideo.style.display = 'none'; // 기본 동영상 숨기기
-                  hoverVideo.style.display = 'block'; // '맛.mp4' 동영상 표시
+                  defaultVideo.style.display = 'none';
+                  hoverVideo.style.display = 'block';
                 });
 
-                // 마우스를 벗어났을 때 'IMG_4107_1.mp4' 동영상으로 복원
                 hoverVideo.addEventListener('mouseout', () => {
-                  hoverVideo.style.display = 'none'; // '맛.mp4' 동영상 숨기기
-                  defaultVideo.style.display = 'block'; // 기본 동영상 다시 표시
+                  hoverVideo.style.display = 'none';
+                  defaultVideo.style.display = 'block';
                 });
               </script>
             </center>
@@ -169,12 +169,11 @@
 
     <!-- 팝업 이미지 컨테이너 -->
     <div id="popup">
-      <span id="close-popup" onclick="closePopup()">&times;</span>
+      <button id="close-popup" onclick="closePopup()">닫힘</button>
       <img src="rjfflqj qorud.jpg" alt="팝업 이미지" />
     </div>
 
     <script>
-      // RGB 색상을 반환하는 함수 수정
       function getRandomColor() {
         const r = Math.floor(Math.random() * 255);
         const g = Math.floor(Math.random() * 150);
@@ -183,7 +182,7 @@
       }
 
       function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
+        return Math.floor(Math.random() * 13) + 5;
       }
 
       function createFallingStar(x, y, color = getRandomColor()) {
@@ -210,7 +209,6 @@
         createFallingStar(event.pageX, event.pageY, 'white');
       });
 
-      // 팝업 기능
       function showPopup() {
         document.getElementById('popup').style.display = 'flex';
       }

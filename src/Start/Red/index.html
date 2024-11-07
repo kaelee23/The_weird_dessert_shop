@@ -25,9 +25,9 @@
           2% 35%,
           39% 35%
         );
-        background-color: yellow; /* 별 색상 */
-        pointer-events: none; /* 클릭 방지 */
-        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+        background-color: yellow;
+        pointer-events: none;
+        animation: fall 5s linear forwards;
       }
 
       @keyframes fall {
@@ -35,10 +35,40 @@
           transform: translateY(0);
         }
         to {
-          transform: translateY(
-            calc(100vh - 10px)
-          ); /* 화면 하단까지 떨어지게 */
+          transform: translateY(calc(100vh - 10px));
         }
+      }
+
+      /* 팝업 스타일 */
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      #popup img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #close-popup {
+        position: absolute;
+        top: 5%; /* 상단에 위치 */
+        right: 5%; /* 오른쪽에 위치 */
+        background-color: #333;
+        color: white;
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -72,14 +102,14 @@
             </center>
             <div style="display: inline">
               <center>
-                <a href="./RedSummer/index.html">
+                <a href="javascript:void(0);" onclick="showPopup()">
                   <p
                     style="
                       color: rgb(255, 255, 255);
                       font-size: 20px;
                       display: inline;
                     ">
-                    정보
+                    이야기
                   </p>
                 </a>
 
@@ -109,8 +139,13 @@
         </section>
       </footer>
     </div>
+    <!-- 팝업 이미지 컨테이너 -->
+    <div id="popup">
+      <button id="close-popup" onclick="closePopup()">닫기</button>
+      <img src="rjfflqj qorud.jpg" alt="팝업 이미지" />
+    </div>
+
     <script>
-      // RGB 색상을 반환하는 함수 수정
       function getRandomColor() {
         const r = Math.floor(Math.random() * 255);
         const g = Math.floor(Math.random() * 150);
@@ -119,7 +154,7 @@
       }
 
       function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
+        return Math.floor(Math.random() * 13) + 5;
       }
 
       function createFallingStar(x, y, color = getRandomColor()) {
@@ -145,6 +180,14 @@
       window.addEventListener('click', (event) => {
         createFallingStar(event.pageX, event.pageY, 'white');
       });
+
+      function showPopup() {
+        document.getElementById('popup').style.display = 'flex';
+      }
+
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
     </script>
   </body>
 </html>
