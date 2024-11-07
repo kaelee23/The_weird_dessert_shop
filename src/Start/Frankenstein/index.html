@@ -72,6 +72,24 @@
         border: none;
         border-radius: 5px;
       }
+
+      /* 이미지 전환 효과 */
+      .image-container img {
+        width: 120%;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .hover-image {
+        display: none;
+      }
+
+      .image-container:hover .default-image {
+        display: none;
+      }
+
+      .image-container:hover .hover-image {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -100,7 +118,16 @@
               Frankenstein
             </p>
             <center>
-              <img src="./IMG_4110.GIF" style="width: 120%" />
+              <div class="image-container">
+                <img
+                  src="./IMG_4110.GIF"
+                  class="default-image"
+                  alt="Default Image" />
+                <img
+                  src="./FranFlavor.jpg"
+                  class="hover-image"
+                  alt="Hover Image" />
+              </div>
             </center>
             <div style="display: inline">
               <center>
@@ -145,7 +172,7 @@
     <!-- 팝업 이미지 컨테이너 -->
     <div id="popup">
       <button id="close-popup" onclick="closePopup()">닫기</button>
-      <img src="pranstory.jpg"팝업 이미지" />
+      <img src="pranstory.jpg" alt="팝업 이미지" />
     </div>
 
     <script>
