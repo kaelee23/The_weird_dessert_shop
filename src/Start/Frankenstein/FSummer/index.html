@@ -3,161 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>걸리버 여행기 줄거리</title>
+    <title>소설과 디저트 랜덤 추천</title>
     <link
       href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
       rel="stylesheet"
       type="text/css" />
     <link rel="stylesheet" href="../../../../style/style.css" />
     <style>
-      /* 애니메이션을 위한 별 스타일 */
-      .falling-star {
-        position: absolute;
-        clip-path: polygon(
-          50% 0%,
-          61% 35%,
-          98% 35%,
-          68% 57%,
-          79% 91%,
-          50% 70%,
-          21% 91%,
-          32% 57%,
-          2% 35%,
-          39% 35%
-        );
-        background-color: yellow; /* 별 색상 */
-        pointer-events: none; /* 클릭 방지 */
-        animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
+      #display-area {
+        text-align: center;
       }
-
-      @keyframes fall {
-        from {
-          transform: translateY(0);
-        }
-        to {
-          transform: translateY(
-            calc(100vh - 10px)
-          ); /* 화면 하단까지 떨어지게 */
-        }
+      #display-area img {
+        display: block;
+        margin: 0 auto;
       }
     </style>
   </head>
+
   <body>
     <div class="viewport">
       <header>
-        <section>
-          <div class="container">
-            <a
-              href="https://kaelee23.github.io/The_weird_dessert_shop/src/Start/index.html">
-              <p style="color: rgb(184, 184, 184); font-size: 15px">
-                << 메뉴 소개로 돌아가기
-              </p>
-            </a>
-            <a href="../../Gulliver/index.html">
-              <p style="color: rgb(184, 184, 184); font-size: 15px">
-                << 걸리버 여행기
-              </p>
-            </a>
-            <br />
-
-            <p style="text-align: center; color: white; font-size: 20px"></p>
-            <br />
-            <center>
-              <img src="./rjfflqj qorud.jpg" style="width: 100%" />
-            </center>
-            <br />
-            <br />
-
-            <p style="text-align: center; color: white; font-size: 20px">
-              소설 걸리버 여행기에서 소인국에 간 걸리버의 내용을 바탕으로,
-            </p>
-            <p style="text-align: center; color: white; font-size: 20px">
-              걸리버가 소인국 사람들에게 잡힌 파트를 디저트화한 것이다.
-            </p>
-            <br />
-            <br />
-            <br />
-
-            <br />
-            <br />
-            <br />
-            <center>
-              <img src="./ob.jpg" style="width: 100%" />
-            </center>
-            <br />
-            <br />
-            <p style="text-align: center; color: white; font-size: 20px">
-              큰 크루아상이 걸리버, 작은 크루아상은 소인이다.
-            </p>
-            <p style="text-align: center; color: white; font-size: 20px">
-              밧줄은 물엿을 꼬아 만든것이고, 못은 초콜릿을 굳혀 만든것이다.
-            </p>
-            <br />
-            <p style="text-align: center; color: white; font-size: 20px">
-              큰 크루아상의 맛은 짠맛과 불맛이 많이 느껴지는데,이는 배를
-              옮겨주엇던 일,
-            </p>
-            <p style="text-align: center; color: white; font-size: 20px">
-              왕국이 불탓던 일 등을 겪었기 때문이다.
-            </p>
-          </div>
-        </section>
+        <center><h1>✷소설과 디저트 랜덤 추천✷</h1></center>
       </header>
-      <main></main>
-      <section></section>
+
+      <main>
+        <!-- 랜덤 이미지가 표시될 영역 -->
+        <section id="display-area">
+          <center>
+            <p>아래 버튼을 눌러, 추천 소설과 디저트를 확인하세요!</p>
+          </center>
+        </section>
+
+        <!-- 버튼 추가 -->
+        <center>
+          <button onclick="showRandomRecommendation()">CLICK!</button>
+        </center>
+      </main>
+
       <footer>
         <section>
-          <div class="container"></div>
+          <div class="container">✦ 이상한 디저트 가게 주인장 추천</div>
         </section>
       </footer>
     </div>
+
     <script>
-      // RGB 색상을 반환하는 함수 수정
-      function getRandomColor() {
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 150);
-        const b = Math.floor(Math.random() * 0);
-        return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
+      // 소설과 디저트 배열 정의 (소설 제목과 이미지 URL 예시 포함)
+      const recommendations = [
+        { title: '허클베리 핀의 모험', image: 'huckleberry_finn.jpg' },
+        { title: '프랑스 마카롱', image: 'macaron.jpg' },
+        { title: '위대한 개츠비', image: 'gatsby.jpg' },
+        { title: '티라미수', image: 'tiramisu.jpg' },
+        { title: '노인과 바다', image: 'old_man_and_sea.jpg' },
+        { title: '초콜릿 케이크', image: 'chocolate_cake.jpg' },
+      ];
+
+      // 랜덤 추천을 표시하는 함수
+      function showRandomRecommendation() {
+        const randomIndex = Math.floor(Math.random() * recommendations.length);
+        const randomItem = recommendations[randomIndex];
+
+        // display-area 요소에 소설 또는 디저트 표시
+        const displayArea = document.getElementById('display-area');
+        displayArea.innerHTML = `
+          <h2>${randomItem.title}</h2>
+          <img src="${randomItem.image}" alt="${randomItem.title}" style="width: 200px; height: auto;" />
+        `;
       }
-
-      function getRandomSize() {
-        return Math.floor(Math.random() * 13) + 5; // 3px ~ 15px 사이의 랜덤 크기
-      }
-
-      function createFallingStar(x, y, color = getRandomColor()) {
-        const star = document.createElement('div');
-        const size = getRandomSize();
-        star.classList.add('falling-star');
-        star.style.backgroundColor = color;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${x - size / 2}px`;
-        star.style.top = `${y - size / 2}px`;
-        document.body.appendChild(star);
-
-        star.addEventListener('animationend', () => {
-          star.remove();
-        });
-      }
-
-      window.addEventListener('mousemove', (event) => {
-        createFallingStar(event.pageX, event.pageY);
-      });
-
-      window.addEventListener('click', (event) => {
-        createFallingStar(event.pageX, event.pageY, 'white');
-      });
-
-      // 이미지 교체를 위한 JavaScript 수정
-      const images = ['store1.png', 'store2.png', 'store3.png']; // 교체할 이미지 배열
-      let currentIndex = 0; // 현재 이미지의 인덱스
-
-      setInterval(() => {
-        const imageElement = document.getElementById('toggle-image');
-        // 배열의 다음 이미지로 변경
-        currentIndex = (currentIndex + 1) % images.length;
-        imageElement.src = `./${images[currentIndex]}`; // 템플릿 리터럴 사용
-      }, 3000); // 3초마다 이미지 교체
     </script>
   </body>
 </html>
