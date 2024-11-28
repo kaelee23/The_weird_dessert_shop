@@ -69,7 +69,7 @@
           2% 35%,
           39% 35%
         );
-        background-color: yellow; /* 별 색상 */
+        background-color: #00FF80; /* 별 색상 */
         pointer-events: none; /* 클릭 방지 */
         animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
       }
@@ -184,7 +184,7 @@ document.querySelectorAll('.center-text1, .center-text2, .center-text3, .center-
   element.addEventListener('click', () => {
     hideAllImages();      // 모든 이미지를 숨기기
     resetTextColor();      // 다른 요소들의 색상을 흰색으로 초기화
-    element.style.color = 'yellow';  // 클릭된 요소의 색상을 노란색으로 변경
+    element.style.color = '#00FF80';  // 클릭된 요소의 색상을 노란색으로 변경
 
     // 해당 요소에 맞는 이미지를 보여주기
     const image = document.getElementById(`hidden-image${index + 1}`);

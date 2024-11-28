@@ -38,7 +38,7 @@
       .hidden-image1 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -58,7 +58,7 @@
       .hidden-image2 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -79,7 +79,7 @@
       .hidden-image3 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -100,7 +100,7 @@
       .hidden-image4 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -120,7 +120,7 @@
       .hidden-image5 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -139,7 +139,7 @@
       .hidden-image6 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -160,7 +160,7 @@
       .hidden-image7 {
         position: absolute;
         left: 16%; /* 첫 번째 세로줄 오른쪽 위치 */
-        top: 57%; /* 중앙 정렬 */
+        top: 53%; /* 중앙 정렬 */
         transform: translateY(-50%); /* 수직 중앙 정렬 */
         display: none; /* 기본적으로 숨김 */
         max-width: 50%; /* 이미지 크기 조정 */
@@ -172,11 +172,11 @@
           50% 0%,
           61% 35%,
           98% 35%,
-          68% 57%,
+          68% 53%,
           79% 91%,
           50% 70%,
           21% 91%,
-          32% 57%,
+          32% 53%,
           2% 35%,
           39% 35%
         );
@@ -265,7 +265,7 @@
     <script>
       // RGB 색상을 반환하는 함수 수정
       function getRandomColor() {
-        const r = Math.floor(Math.random() * 255);
+        const r = Math.floor(Math.random() * 253);
         const g = Math.floor(Math.random() * 150);
         const b = Math.floor(Math.random() * 0);
         return `rgb(${r}, ${g}, ${Math.max(b, 100)})`;
@@ -327,7 +327,7 @@
           element.addEventListener('click', () => {
             hideAllImages(); // 모든 이미지를 숨김
             resetTextColor(); // 모든 텍스트 색상을 흰색으로 초기화
-            element.style.color = 'yellow'; // 클릭된 텍스트만 노란색으로 변경
+            element.style.color = '#00FF80'; // 클릭된 텍스트만 노란색으로 변경
 
             // 해당 요소에 맞는 이미지를 보이기
             const image = document.getElementById(`hidden-image${index + 1}`);

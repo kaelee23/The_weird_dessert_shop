@@ -160,7 +160,7 @@
           2% 35%,
           39% 35%
         );
-        background-color: yellow; /* 별 색상 */
+        background-color: #00ff80; /* 별 색상 */
         pointer-events: none; /* 클릭 방지 */
         animation: fall 5s linear forwards; /* 'forwards'로 애니메이션 종료 후 상태 유지 */
       }
@@ -303,7 +303,7 @@
           element.addEventListener('click', () => {
             hideAllImages(); // 모든 이미지를 숨김
             resetTextColor(); // 모든 텍스트 색상을 흰색으로 초기화
-            element.style.color = 'yellow'; // 클릭된 텍스트만 노란색으로 변경
+            element.style.color = '#00FF80'; // 클릭된 텍스트만 노란색으로 변경
 
             // 해당 요소에 맞는 이미지를 보이기
             const image = document.getElementById(`hidden-image${index + 1}`);
