@@ -104,28 +104,6 @@
                 autoplay
                 muted
                 loop></video>
-              <video
-                id="hover-video"
-                src="./matt.mp4"
-                style="width: 120%; margin-top: 20px; display: none"
-                autoplay
-                muted
-                loop></video>
-
-              <script>
-                const defaultVideo = document.getElementById('default-video');
-                const hoverVideo = document.getElementById('hover-video');
-
-                defaultVideo.addEventListener('mouseover', () => {
-                  defaultVideo.style.display = 'none';
-                  hoverVideo.style.display = 'block';
-                });
-
-                hoverVideo.addEventListener('mouseout', () => {
-                  hoverVideo.style.display = 'none';
-                  defaultVideo.style.display = 'block';
-                });
-              </script>
             </center>
             <div style="display: inline">
               <center>
